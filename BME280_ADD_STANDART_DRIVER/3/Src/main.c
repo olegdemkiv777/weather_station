@@ -121,6 +121,7 @@ int main(void)
 	
   while (1)
   {
+		
 		  test.var_1=111;
 		  test.var_2=222;
 		  test.var_3=333;
