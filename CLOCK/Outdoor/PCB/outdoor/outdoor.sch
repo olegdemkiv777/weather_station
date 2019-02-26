@@ -1,0 +1,182 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_ST_STM32F1:STM32F103C8Tx U1
+U 1 1 5C5F2937
+P 5400 4450
+F 0 "U1" H 5900 2900 50  0000 C CNN
+F 1 "STM32F103C8Tx" H 5950 2800 50  0000 C CNN
+F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 4800 3050 50  0001 R CNN
+F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/CD00161566.pdf" H 5400 4450 50  0001 C CNN
+	1    5400 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5C5F2A2A
+P 5350 6200
+F 0 "#PWR0101" H 5350 5950 50  0001 C CNN
+F 1 "GND" H 5355 6027 50  0000 C CNN
+F 2 "" H 5350 6200 50  0001 C CNN
+F 3 "" H 5350 6200 50  0001 C CNN
+	1    5350 6200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 5950 5200 6050
+Wire Wire Line
+	5200 6050 5300 6050
+Wire Wire Line
+	5500 6050 5500 5950
+Wire Wire Line
+	5400 5950 5400 6050
+Connection ~ 5400 6050
+Wire Wire Line
+	5400 6050 5500 6050
+Wire Wire Line
+	5300 5950 5300 6050
+Connection ~ 5300 6050
+Wire Wire Line
+	5300 6050 5350 6050
+Wire Wire Line
+	5350 6050 5350 6200
+Connection ~ 5350 6050
+Wire Wire Line
+	5350 6050 5400 6050
+$Comp
+L RF:NRF24L01_Breakout U2
+U 1 1 5C5F2C69
+P 7500 2750
+F 0 "U2" H 7978 2728 50  0000 L CNN
+F 1 "NRF24L01_Breakout" H 7978 2637 50  0000 L CNN
+F 2 "RF_Module:nRF24L01_Breakout" H 7650 3350 50  0001 L CIN
+F 3 "http://www.nordicsemi.com/eng/content/download/2730/34105/file/nRF24L01_Product_Specification_v2_0.pdf" H 7500 2650 50  0001 C CNN
+	1    7500 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L outdoor-cache:outdoor-cache_BME280_modul U?
+U 1 1 5C5F2EFF
+P 4200 1500
+F 0 "U?" H 4727 1546 50  0000 L CNN
+F 1 "BME280_modul" H 4727 1455 50  0000 L CNN
+F 2 "" H 4200 1500 50  0001 C CNN
+F 3 "" H 4200 1500 50  0001 C CNN
+	1    4200 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L outdoor-cache:outdoor-cache_UART_TTL_MODUL U?
+U 1 1 5C5F33BB
+P 7000 1250
+F 0 "U?" H 6706 1625 50  0000 C CNN
+F 1 "UART_TTL_MODUL" H 6706 1534 50  0000 C CNN
+F 2 "" H 6950 1600 50  0001 C CNN
+F 3 "" H 6950 1600 50  0001 C CNN
+	1    7000 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L outdoor-cache:TP4056_MODUL U?
+U 1 1 5C5F3AEF
+P 2400 2200
+F 0 "U?" H 2628 2246 50  0000 L CNN
+F 1 "TP4056_MODUL" H 2628 2155 50  0000 L CNN
+F 2 "" H 2550 2650 50  0001 C CNN
+F 3 "" H 2550 2650 50  0001 C CNN
+	1    2400 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Crystal Y?
+U 1 1 5C5F3DC7
+P 2300 4350
+F 0 "Y?" V 2346 4219 50  0000 R CNN
+F 1 "8MHz" V 2255 4219 50  0000 R CNN
+F 2 "" H 2300 4350 50  0001 C CNN
+F 3 "~" H 2300 4350 50  0001 C CNN
+	1    2300 4350
+	0    -1   -1   0   
+$EndComp
+Text GLabel 4700 3550 0    39   Input ~ 0
+CRISTALO
+Text GLabel 4700 3650 0    39   Input ~ 0
+CRISTALI
+Text GLabel 2700 4050 2    39   Input ~ 0
+CRISTALO
+Text GLabel 2700 4700 2    39   Input ~ 0
+CRISTALI
+Wire Wire Line
+	2700 4050 2300 4050
+Wire Wire Line
+	2300 4050 2300 4200
+Wire Wire Line
+	2300 4500 2300 4700
+Wire Wire Line
+	2300 4700 2700 4700
+Wire Wire Line
+	2300 4700 1950 4700
+Connection ~ 2300 4700
+Wire Wire Line
+	2300 4050 1950 4050
+Connection ~ 2300 4050
+$Comp
+L Device:C C?
+U 1 1 5C5F43EE
+P 1800 4050
+F 0 "C?" V 2052 4050 50  0000 C CNN
+F 1 "18p" V 1961 4050 50  0000 C CNN
+F 2 "" H 1838 3900 50  0001 C CNN
+F 3 "~" H 1800 4050 50  0001 C CNN
+	1    1800 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C5F4485
+P 1800 4700
+F 0 "C?" V 1548 4700 50  0000 C CNN
+F 1 "18p" V 1639 4700 50  0000 C CNN
+F 2 "" H 1838 4550 50  0001 C CNN
+F 3 "~" H 1800 4700 50  0001 C CNN
+	1    1800 4700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1650 4050 1400 4050
+Wire Wire Line
+	1400 4050 1400 4350
+Wire Wire Line
+	1400 4700 1650 4700
+Wire Wire Line
+	1400 4350 1000 4350
+Wire Wire Line
+	1000 4350 1000 4450
+Connection ~ 1400 4350
+Wire Wire Line
+	1400 4350 1400 4700
+$Comp
+L power:GND #PWR?
+U 1 1 5C5F4898
+P 1000 4450
+F 0 "#PWR?" H 1000 4200 50  0001 C CNN
+F 1 "GND" H 1005 4277 50  0000 C CNN
+F 2 "" H 1000 4450 50  0001 C CNN
+F 3 "" H 1000 4450 50  0001 C CNN
+	1    1000 4450
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
